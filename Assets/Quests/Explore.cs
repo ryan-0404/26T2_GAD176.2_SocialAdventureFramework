@@ -11,9 +11,9 @@ public class Explore : Quests
     void Start()
     {
         questActive = true;
-        Name = "Explore";
+        questName = "Explore";
 
-        Debug.Log("Quest: " + Name);
+        Debug.Log("Quest: " + questName);
 
     }
     public override void Reward()
@@ -23,7 +23,7 @@ public class Explore : Quests
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (questActive == true)
             {
@@ -32,6 +32,16 @@ public class Explore : Quests
                 questActive = false;
                 EndQuest();
             }
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            goodQuest = true;
+            Debug.Log("Good quest:" + goodQuest);
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        { 
+            evilQuest = true;
+            Debug.Log("Evil quest:" + evilQuest);
         }
 
     }
