@@ -12,6 +12,11 @@ namespace SAE.GAD176.Scripting2.Project2.CharacterBondSystem
 
         [SerializeField]
         protected float bondExperience = 0.00f;
+
+        // add events here for ChangeBondExperience()
+        // BondLevelUP
+
+
+
     }
-    
 }
