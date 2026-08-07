@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class CharacterApple : CharacterStats
 {
+    // fuck this life
     void Start()
     {
         characterName = gameObject.name;

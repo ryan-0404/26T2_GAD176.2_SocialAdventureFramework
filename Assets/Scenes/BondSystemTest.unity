@@ -458,12 +458,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2121950087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ac015a96d1021448a00684840508d19, type: 3}
+  m_Script: {fileID: 11500000, guid: e858ba4e463b3f545b5166c6208412fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: -1
   friendLevel: 0
   bondExperience: 0
+  changeBondExperienceEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

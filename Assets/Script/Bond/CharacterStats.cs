@@ -15,9 +15,17 @@ namespace SAE.GAD176.Scripting2.Project2.CharacterBondSystem
         // add events here for ChangeBondExperience()
         // BondLevelUP
 
-        // public UnityEvent ChangeBondExperienceEvent = new UnityEvent();
+        public UnityEvent changeBondExperienceEvent;
 
-
+        private void Update()
+        {
+            if (Input.GetKeyUp(KeyCode.F))
+            {
+                changeBondExperienceEvent?.Invoke();
+                ChangeBondExperience();
+            }
+            
+        }
 
         //private void OnEnable()
         //{
@@ -30,11 +38,13 @@ namespace SAE.GAD176.Scripting2.Project2.CharacterBondSystem
         //    ChangeBondExperienceEvent.RemoveListener(ChangeBondExperience);
         //}
 
-        //public void ChangeBondExperience()
-        //{
-        //    bondExperience += 15; // quest reward exp
-        //    Debug.Log("Bond Increased" + bondExperience);
-        //}
+        public void ChangeBondExperience()
+        {
+            bondExperience += 15; // quest reward exp
+            Debug.Log("Bond Increased " + bondExperience);
+        }
+
+
 
     }
 }
