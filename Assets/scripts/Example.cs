@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class Example : MonoBehaviour
 {
-    PlayerInput playerInput;
+    public PlayerInput playerInput;
     DeedJournal journal;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
