@@ -11,8 +11,9 @@ public class Quests : MonoBehaviour
     //The name of the quest: can be changed
     protected string questName;
 
-	//Acts as the main form of setting the quest as active or not
-	protected bool questActive;
+    //Acts as the main form of setting the quest as active or not
+    [SerializeField]
+    protected bool questActive;
 
 	/// <summary>
 	/// Replaceable for rewarding the player upon quest completion
