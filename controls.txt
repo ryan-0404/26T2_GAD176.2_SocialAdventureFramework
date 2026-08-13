@@ -1,0 +1,9 @@
+controls
+
+- open journal: J
+- add small good deed: Q
+- add basic good deed: W
+- add great good deed: E
+- add small evil deed: Z
+- add basic evil deed: X
+- add great evil deed: C

@@ -10,20 +10,21 @@ public class Explore : Quests
 
     void Start()
     {
+
         questActive = true;
         questName = "Explore";
 
         Debug.Log("Quest: " + questName);
 
     }
-    public override void Reward()
-    {
-        Debug.Log("You feel rewarded");
-    }
+    //public override void Reward()
+    //{
+    //    Debug.Log("You feel rewarded");
+    //}
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             if (questActive == true)
             {
@@ -33,12 +34,12 @@ public class Explore : Quests
                 EndQuest();
             }
         }
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.N))
         {
             goodQuest = true;
             Debug.Log("Good quest:" + goodQuest);
         }
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.M))
         { 
             evilQuest = true;
             Debug.Log("Evil quest:" + evilQuest);
