@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CharacterApple : CharacterStats
 {
-    // fuck this life
+    
     void Start()
     {
         characterName = gameObject.name;
@@ -13,11 +13,16 @@ public class CharacterApple : CharacterStats
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            bondExperience += 10;
-            Debug.Log("Quest complete. Bond experience increased to: " + bondExperience);
+            ChangeBondExperience();
         }
+    }
+    public void ChangeBondExperience() // Function to change xp. Maybe this could have a parameter?
+    {
+        bondExperience += 15; // quest reward exp
+        Debug.Log("Quest complete. Bond experience increased to: " + bondExperience);
+
         if (bondExperience >= 100)
         {
             friendLevel += 1;
