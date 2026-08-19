@@ -7,6 +7,7 @@ public class Quests : MonoBehaviour
 	public UnityEvent questComplete;
 	public PlayerInput playerInput;
     public LevellingSystem level;
+    public CharacterApple apple;
 
 
     //The name of the quest: can be changed
@@ -43,6 +44,7 @@ public class Quests : MonoBehaviour
         }
         if (goodQuest == true)
         {
+            apple.ChangeBondExperience();
             if (questLevel == 1)
             {
                 playerInput.OnSmallGoodDeed?.Invoke();
@@ -71,5 +73,5 @@ public class Quests : MonoBehaviour
 	//Bools that indicate if the quest is good o evil
 	public bool evilQuest;
 	public bool goodQuest;
-	public int questLevel;
+	public int questLevel = 1;
 }

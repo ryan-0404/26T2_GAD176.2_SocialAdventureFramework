@@ -16,15 +16,18 @@ public class LevellingSystem : MonoBehaviour
 
     public float questXP;
 
+    public float bondXP;
+
     //Level
     public int playerLevel = 1;
     public float experiencePoints = 0;
     public float maxExperience = 100;
 
     //stats
-    public float questXPGain =1;
-    public float goodXPGain =1;
+    public float questXPGain = 1;
+    public float goodXPGain = 1;
     public float evilXPGain = 1;
+    public float bondXPGain = 1;
 
 
 
@@ -33,7 +36,7 @@ public class LevellingSystem : MonoBehaviour
 
     void Update()
     {
-        if (evilXP + goodXP + questXP >= maxExperience)//level up condintions and activation
+        if (evilXP + goodXP + questXP + bondXP >= maxExperience)//level up condintions and activation
         {
             levelUp();
         }
@@ -47,7 +50,10 @@ public class LevellingSystem : MonoBehaviour
     public void levelUp()
     {
         //questXP bonuses
-        questXPGain += questXP * 0.01f;
+        bondXPGain += bondXP * 0.01f;
+
+        //bondXP bonuses
+        questXPGain += bondXP * 0.01f;
 
 
         //redXP bonuses
@@ -62,6 +68,7 @@ public class LevellingSystem : MonoBehaviour
         evilXP = 0;
         goodXP = 0;
         questXP = 0;
+        bondXP = 0;
 
         //Increasing player level
         playerLevel++;
