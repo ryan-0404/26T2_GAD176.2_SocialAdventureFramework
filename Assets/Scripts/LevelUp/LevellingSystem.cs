@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class LevellingSysyem : MonoBehaviour
+public class LevellingSystem : MonoBehaviour
 {
     //Cross script referencing
     public BattleSystem battleSystem;
@@ -10,19 +10,30 @@ public class LevellingSysyem : MonoBehaviour
 
 
     //types of XP
-    public float redXP; //offense XP, increases Attack and Health
-    public float blueXP; //Defense XP, increases block and defense
-    public float greenXP; //magic XP, increases magic attack and mana
+    public float evilXP; //evil XP, increases Attack and Health
+    public float goodXP; //good XP, increases block and defense
+ 
+
+    public float questXP;
 
     //Level
     public int playerLevel = 1;
     public float experiencePoints = 0;
     public float maxExperience = 100;
 
+    //stats
+    public float questXPGain =1;
+    public float goodXPGain =1;
+    public float evilXPGain = 1;
+
+
+
+    
+
 
     void Update()
     {
-        if (redXP + blueXP + greenXP >= maxExperience)//level up condintions and activation
+        if (evilXP + goodXP + questXP >= maxExperience)//level up condintions and activation
         {
             levelUp();
         }
@@ -35,22 +46,22 @@ public class LevellingSysyem : MonoBehaviour
     //level up function
     public void levelUp()
     {
+        //questXP bonuses
+        questXPGain += questXP * 0.01f;
+
+
         //redXP bonuses
-        playerStats.playerAttack += redXP * 0.1f;
-        playerStats.playerMaxHealth += redXP * 0.5f;
+        evilXPGain += evilXP * 0.01f;
 
         //BlueXP bonuses
-        playerStats.playerDefense += blueXP * 0.01f;
-        playerStats.playerBlock += blueXP * 0.1f;
+        goodXPGain += goodXP * 0.01f;
 
-        //greenXP bonuses
-        playerStats.fireballDamage += greenXP * 0.2f;
-        playerStats.maxMana += greenXP * 0.05f;
+
 
         //Resetting experience points
-        greenXP = 0;
-        redXP = 0;
-        blueXP = 0;
+        evilXP = 0;
+        goodXP = 0;
+        questXP = 0;
 
         //Increasing player level
         playerLevel++;

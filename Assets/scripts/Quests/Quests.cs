@@ -6,10 +6,11 @@ public class Quests : MonoBehaviour
 
 	public UnityEvent questComplete;
 	public PlayerInput playerInput;
+    public LevellingSystem level;
 
 
     //The name of the quest: can be changed
-    protected string questName;
+    public string questName;
 
     //Acts as the main form of setting the quest as active or not
     [SerializeField]
@@ -21,6 +22,7 @@ public class Quests : MonoBehaviour
 	public virtual void Reward()
 	{
 		Debug.Log("Reward collected");
+        level.questXP += 10 * level.questXPGain;
         if (evilQuest == true)
         {
             if (questLevel == 1)

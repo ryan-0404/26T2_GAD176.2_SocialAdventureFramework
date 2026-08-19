@@ -44,6 +44,10 @@ public class Explore : Quests
             evilQuest = true;
             Debug.Log("Evil quest:" + evilQuest);
         }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            questActive = true;
+        }
 
     }
 }
